@@ -123,7 +123,7 @@ function handleSubmit(e) {
         message += `تكلفة التحضير: ${formatPrice(totalPrepCost)}\n`;
     }
     
-    message += `رسوم التوصيل: مجاناً\n`;
+    message += `رسوم التوصيل: حسب المسافة\n`;
     message += `\n*الإجمالي: ${formatPrice(total)}*`;
     
     // إرسال إلى واتساب
