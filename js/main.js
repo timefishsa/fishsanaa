@@ -1,14 +1,13 @@
 // إخفاء شاشة التحميل بعد تحميل الصفحة
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loading-screen');
-    setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    }, 1500);
+window.addEventListener('load', function () {
+    var loading = document.getElementById('loading-screen');
+    if (loading) {
+        loading.style.opacity = '0';
+        setTimeout(function () {
+            loading.style.display = 'none';
+        }, 300);
+    }
 });
-
 // عرض المنتجات في الصفحة الرئيسية
 document.addEventListener('DOMContentLoaded', function() {
     const productsGrid = document.getElementById('products-grid');
