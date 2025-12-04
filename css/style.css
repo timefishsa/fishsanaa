@@ -80,7 +80,7 @@ body {
 
 /* الصف العلوي في الهيدر */
 .header-inner {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 1.5rem;
     padding: 0.75rem 0;
