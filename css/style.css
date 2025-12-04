@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
+/* reset بسيط */
 * {
     margin: 0;
     padding: 0;
@@ -25,18 +26,17 @@ body {
     padding-inline: 16px;
 }
 
-/* الأقسام المرتبطة بروابط الناف بار */
+/* الأقسام المرتبطة بروابط الناف بار (عشان الهيدر الثابت ما يغطيها) */
 #products,
 #why-us,
 #contact {
-    scroll-margin-top: 90px; /* عدّلها لو تغير ارتفاع الهيدر */
+    scroll-margin-top: 90px;
 }
 
 /* شاشة التحميل */
 .loading-screen {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #003080 0%, #0052cc 100%);
@@ -73,7 +73,7 @@ body {
 
 /* الهيدر العام */
 .header {
-    background: #031b2f; /* أزرق غامق */
+    background: #031b2f;
     color: #fff;
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -123,7 +123,7 @@ body {
     display: flex;
     gap: 1rem;
     font-size: 0.95rem;
-    margin-inline-start: auto; /* مع RTL يصير على اليسار */
+    margin-inline-start: auto;
 }
 
 .main-nav a {
@@ -204,7 +204,7 @@ body {
     border-radius: 999px;
     padding: 0.2rem 0.6rem;
     cursor: pointer;
-    display: none; /* نفعّله في الشاشات الصغيرة */
+    display: none; /* يظهر فقط في الموبايل */
 }
 
 /* الهيرو */
@@ -264,37 +264,6 @@ body {
     box-shadow: 0 18px 40px rgba(0,0,0,0.45);
 }
 
-/* استجابة للموبايل للهيدر والهيرو */
-@media (max-width: 900px) {
-    .header-inner {
-        position: static;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .main-nav {
-        display: none;
-    }
-
-    .nav-toggle {
-        display: block;
-        margin-inline-start: auto;
-    }
-
-    .hero-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-image {
-        order: -1;
-    }
-
-    .header-actions {
-        width: 100%;
-        align-items: flex-start;
-    }
-}
-
 /* القسم الرئيسي */
 .main {
     padding: 60px 0;
@@ -302,7 +271,7 @@ body {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #003080;
     margin-bottom: 50px;
     position: relative;
@@ -325,7 +294,7 @@ body {
 /* شبكة المنتجات */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -351,11 +320,13 @@ body {
     height: 4px;
     background: linear-gradient(90deg, #003080, #0052cc);
     transform: scaleX(0);
+    transform-origin: right;
     transition: transform 0.3s ease;
 }
 
 .product-card:hover::before {
     transform: scaleX(1);
+    transform-origin: left;
 }
 
 .product-card:hover {
@@ -481,7 +452,7 @@ body {
     fill: white;
 }
 
-/* صفحة الطلب */
+/* صفحة الطلب (لو استخدمتها لاحقاً) */
 .order-page {
     min-height: 100vh;
     padding: 40px 0;
@@ -777,21 +748,43 @@ body {
 }
 
 /* تصميم متجاوب */
+@media (max-width: 900px) {
+    .header-inner {
+        position: static;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+        margin-inline-start: auto;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .header-actions {
+        width: 100%;
+        align-items: flex-start;
+    }
+}
+
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .header .subtitle {
-        font-size: 1.2rem;
-    }
-
     .section-title {
         font-size: 2rem;
     }
 
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
         gap: 20px;
     }
 
@@ -831,8 +824,12 @@ body {
         height: 80px;
     }
 
-    .header h1 {
-        font-size: 1.5rem;
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
     }
 
     .products-grid {
