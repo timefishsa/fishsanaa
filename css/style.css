@@ -71,32 +71,33 @@ body {
 /* الهيدر */
 /* ----------------------------- */
 
+/* ============================ */
+/* الهيدر — النسخة النهائية     */
+/* ============================ */
+
 .header {
     background: linear-gradient(135deg, #003080 0%, #0052cc 100%);
     color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* بعد الإصلاح: display:flex بدل none */
-.header-inner {
-    display: flex !important;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 0.75rem 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(0, 32, 88, 0.90);
-    backdrop-filter: blur(8px);
+    z-index: 200;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
-/* لوجو الهيدر */
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 0;
+}
+
+/* اللوجو */
 .logo-png {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
+    gap: .75rem;
     color: inherit;
+    text-decoration: none;
 }
 
 .logo-png img.logo {
@@ -105,16 +106,90 @@ body {
     object-fit: contain;
 }
 
-/* النص بجانب اللوجو */
-.site-title {
-    font-size: 1.2rem;
-    margin: 0 0 .15rem;
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.subtitle {
-    margin: 0;
+.logo-text .site-title {
+    font-size: 1.25rem;
+    margin-bottom: .15rem;
+}
+
+.logo-text .subtitle {
     font-size: .85rem;
-    opacity: 0.95;
+    opacity: 0.9;
+}
+
+/* القائمة */
+.main-nav {
+    display: flex;
+    gap: 1rem;
+    margin-inline-start: auto;
+}
+
+.main-nav a {
+    color: #eaf6ff;
+    padding: .35rem .75rem;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: .2s;
+}
+
+.main-nav a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* الأزرار */
+.header-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.header-actions .btn-primary {
+    background: #00ba7c;
+    padding: .55rem 1.2rem;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.header-actions .btn-primary:hover {
+    background: #009e6b;
+}
+
+.header-contact .phone {
+    color: #9af0ff;
+    font-weight: bold;
+}
+
+/* زر الموبايل */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+/* عرض الموبايل */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+        margin-inline-start: auto;
+    }
+    .header-actions {
+        display: none;
+    }
 }
 
 /* ----------------------------- */
