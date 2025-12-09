@@ -26,7 +26,7 @@ const products = [
     { id: 24, name: "سمك باغه", price: 1000 },
     { id: 25, name: "جمبري كبير", price: 5000 },
     { id: 26, name: "جمبري مخلوط", price: 4000 },
-     { id: 21, name: "سمك ثمد", price: 3500 },
+     { id: 30, name: "سمك ثمد", price: 3500 },
     { id: 27, name: "جمبري صغير (حميره)", price: 2500 },
     { id: 28, name: "شروخ", price: 5000 },
     { id: 29, name: "ابو مقص", price: 1500 }
