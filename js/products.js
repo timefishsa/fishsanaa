@@ -23,7 +23,7 @@ const products = [
     { id: 21, name: "سمك بعرور", price: 2500 },
     { id: 22, name: "سمك جرم", price: 2500 },
     { id: 23, name: "سمك لسن", price: 2000 },
-    { id: 24, name: "سمك باغه", price: 1000 },
+    { id: 24, name: "سمك باغه", price: 800 },
     { id: 25, name: "جمبري كبير", price: 5000 },
     { id: 26, name: "جمبري مخلوط", price: 4000 },
      { id: 30, name: "سمك ثمد", price: 3500 },
