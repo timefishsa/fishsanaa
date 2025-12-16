@@ -39,6 +39,17 @@ src="https://www.facebook.com/tr?id=743749832076038&ev=PageView&noscript=1"
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="js/products.js" as="script">
+    <style>
+  .loading-screen{
+    position:fixed; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:#fff; z-index:9999;
+    transition:opacity .25s ease, visibility .25s ease;
+  }
+  .loading-screen.is-hidden{opacity:0; visibility:hidden; pointer-events:none;}
+  .loading-logo{width:120px; height:auto;}
+</style>
+
     
     <link rel="stylesheet" href="css/style.css">
 </head>
