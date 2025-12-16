@@ -1,117 +1,77 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وقت السمك | أسماك طازجة في صنعاء - أسماك البليلي - توصيل يومي سريع</title>
-<!-- Meta Pixel Code -->
-...
-<script src="js/products.js" defer></script>
-<script src="js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وقت السمك | أسماك طازجة في صنعاء - أسماك البليلي - توصيل يومي سريع</title>
 
-<!-- Meta Pixel Code (Delayed) -->
-<script>
-(function(){
-  function startPixel(){
-    if (window.fbq) return;
+  <!-- SEO -->
+  <meta name="description" content="وقت السمك - أفضل أسماك صنعاء والبليلي طازجة يومياً مع تنظيف وتقطيع وتوصيل سريع. أكثر من 29 نوع من الأسماك والمأكولات البحرية في متجرك المفضل. اطلب الآن عبر واتساب!">
+  <meta name="author" content="وقت السمك - صنعاء - البليلي">
+  <meta name="keywords" content="سمك, أسماك, صنعاء, البليلي, توصيل, طازج, مأكولات بحرية, اليمن">
 
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+  <!-- Open Graph -->
+  <meta property="og:title" content="وقت السمك | أسماك طازجة في صنعاء - البليلي">
+  <meta property="og:description" content="29 نوع من أجود الأسماك الطازجة تُوصَل لباب بيتك في صنعاء. تنظيف - تقطيع - تسليم سريع.">
+  <meta property="og:image" content="https://fishsanaa.vercel.app/images/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_YE">
 
-    fbq('init', '743749832076038');
-    fbq('track', 'PageView');
-  }
+  <link rel="canonical" href="https://fishsanaa.vercel.app">
 
-  window.addEventListener('DOMContentLoaded', function(){
-    setTimeout(startPixel, 400);
-  }, { once:true });
-})();
-</script>
+  <!-- Preload logo (لللودر) -->
+  <link rel="preload" as="image" href="/images/logo.png" fetchpriority="high">
 
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=743749832076038&ev=PageView&noscript=1"
-/></noscript>
+  <!-- Preconnect (Facebook + Fonts) -->
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+  <link rel="preconnect" href="https://www.facebook.com" crossorigin>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts (Async) -->
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap">
+  </noscript>
 
+  <!-- Critical CSS للودر -->
+  <style>
+    .loading-screen{
+      position:fixed; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:#fff; z-index:9999;
+      transition:opacity .25s ease, visibility .25s ease;
+    }
+    .loading-screen.is-hidden{opacity:0; visibility:hidden; pointer-events:none;}
+    .loading-logo{width:120px; height:auto;}
+  </style>
 
+  <!-- CSS الموقع -->
+  <link rel="stylesheet" href="css/style.css">
 
-<script>
-(function () {
-  function hideLoader(){
-    var el = document.getElementById('loading-screen');
-    if(!el) return;
-    el.classList.add('is-hidden');
-    setTimeout(function(){ el.remove(); }, 400);
-  }
+  <!-- Loader JS (خفيف) -->
+  <script>
+    (function () {
+      function hideLoader(){
+        var el = document.getElementById('loading-screen');
+        if(!el) return;
+        el.classList.add('is-hidden');
+        setTimeout(function(){ el.remove(); }, 400);
+      }
 
-  // اختفِ بمجرد ما الـ DOM يجهز
-  window.addEventListener('DOMContentLoaded', function () {
-    requestAnimationFrame(hideLoader);
-  }, { once: true });
+      window.addEventListener('DOMContentLoaded', function () {
+        requestAnimationFrame(hideLoader);
+      }, { once: true });
 
-  // أمان إضافي
-  window.addEventListener('load', hideLoader, { once: true });
+      window.addEventListener('load', hideLoader, { once: true });
 
-  // أقصى حد (لو صار أي تعليق)
-  setTimeout(hideLoader, 2500);
-})();
-</script>
-
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=743749832076038&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    <!-- SEO -->
-    <meta name="description" content="وقت السمك - أفضل أسماك صنعاء والبليلي طازجة يومياً مع تنظيف وتقطيع وتوصيل سريع. أكثر من 29 نوع من الأسماك والمأكولات البحرية في متجرك المفضل. اطلب الآن عبر واتساب!">
-    <meta name="author" content="وقت السمك - صنعاء - البليلي">
-    <meta name="keywords" content="سمك, أسماك, صنعاء, البليلي, توصيل, طازج, مأكولات بحرية, اليمن">
-
-    <!-- Open Graph (للمشاركة في واتساب وفيسبوك وغيرها) -->
-    <meta property="og:title" content="وقت السمك |أسماك طازجة في صنعاء - البليلي">
-    <meta property="og:description" content="29 نوع من أجود الأسماك الطازجة تُوصَل لباب بيتك في صنعاء. تنظيف - تقطيع - تسليم سريع.">
-    <meta property="og:image" content="https://fishsanaa.vercel.app/images/logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ar_YE">
-<link rel="preload" as="image" href="/images/logo.png" fetchpriority="high">
-
-
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://www.facebook.com" crossorigin>
-<link rel="dns-prefetch" href="//connect.facebook.net">
-<link rel="dns-prefetch" href="//www.facebook.com">
- <!-- Canonical -->
-    <link rel="canonical" href="https://fishsanaa.vercel.app">
- <style>
-  .loading-screen{
-    position:fixed; inset:0;
-    display:flex; align-items:center; justify-content:center;
-    background:#fff; z-index:9999;
-    transition:opacity .25s ease, visibility .25s ease;
-  }
-  .loading-screen.is-hidden{opacity:0; visibility:hidden; pointer-events:none;}
-  .loading-logo{width:120px; height:auto;}
-</style>
-<!-- Google Fonts (Cairo) - Performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'">
-
-<noscript>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap">
-</noscript>
-    
-<link rel="stylesheet" href="css/style.css">
+      setTimeout(hideLoader, 2500);
+    })();
+  </script>
 </head>
 
 <body id="top">
