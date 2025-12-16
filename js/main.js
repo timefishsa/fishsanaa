@@ -1,13 +1,19 @@
 // إخفاء شاشة التحميل بعد تحميل الصفحة
-window.addEventListener('load', function () {
-    const loading = document.getElementById('loading-screen');
-    if (loading) {
-        loading.style.opacity = '0';
-        setTimeout(function () {
-            loading.style.display = 'none';
-        }, 300);
-    }
-});
+// إخفاء شاشة التحميل
+function hideLoader(){
+  const loading = document.getElementById('loading-screen');
+  if (!loading) return;
+  loading.classList.add('is-hidden');
+  setTimeout(() => loading.remove(), 400);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(hideLoader);
+}, { once: true });
+
+window.addEventListener('load', hideLoader, { once: true });
+setTimeout(hideLoader, 2500);
+
 
 // متغير لتخزين المنتجات المعروضة حالياً
 let currentDisplayedProducts = sortedProducts;
