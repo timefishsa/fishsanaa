@@ -17,6 +17,29 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '743749832076038');
 fbq('track', 'PageView');
 </script>
+
+<script>
+(function () {
+  function hideLoader(){
+    var el = document.getElementById('loading-screen');
+    if(!el) return;
+    el.classList.add('is-hidden');
+    setTimeout(function(){ el.remove(); }, 400);
+  }
+
+  // اختفِ بمجرد ما الـ DOM يجهز
+  window.addEventListener('DOMContentLoaded', function () {
+    requestAnimationFrame(hideLoader);
+  }, { once: true });
+
+  // أمان إضافي
+  window.addEventListener('load', hideLoader, { once: true });
+
+  // أقصى حد (لو صار أي تعليق)
+  setTimeout(hideLoader, 2500);
+})();
+</script>
+
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=743749832076038&ev=PageView&noscript=1"
 /></noscript>
@@ -176,8 +199,9 @@ src="https://www.facebook.com/tr?id=743749832076038&ev=PageView&noscript=1"
     </a>
 
     <!-- تحميل السكريبتات -->
-    <script src="js/products.js"></script>
-    <script src="js/main.js"></script>
+<script src="js/products.js" defer></script>
+<script src="js/main.js" defer></script>
+
 
 </body>
 </html>
