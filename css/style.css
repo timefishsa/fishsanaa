@@ -995,3 +995,10 @@ input, textarea, select {
         display: none;
     }
 }
+.loading-screen.is-hidden,
+.loading-screen.fade-out{
+  opacity:0;
+  pointer-events:none;
+  visibility:hidden;
+}
+
