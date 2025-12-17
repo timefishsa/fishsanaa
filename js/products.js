@@ -1,4 +1,3 @@
-// قائمة المنتجات
 // تحميل المنتجات من ملف JSON داخل نفس الموقع
 const DATA_URL = "data/products.json?v=1"; // غيّر v=2 عند تعديل الأسعار
 
@@ -13,13 +12,19 @@ async function loadProducts() {
 
   products = await res.json();
 
-
+  // ترتيب المنتجات أبجدياً (يدعم العربية)
+  sortedProducts = [...products].sort((a, b) =>
+    a.name.localeCompare(b.name, "ar", { sensitivity: "base" })
+  );
 
   currentDisplayedProducts = sortedProducts;
 }
 
+// Promise جاهزية المنتجات (يستخدمه main.js)
+const productsReady = loadProducts();
 
-// تطبيع عربي بسيط للبحث (يوحّد الهمزات ويشيل التشكيل ويمسح المسافات الزائدة)
+
+// تطبيع عربي بسيط للبحث
 function normalizeArabic(text = "") {
   return text
     .toString()
@@ -33,16 +38,11 @@ function normalizeArabic(text = "") {
     .replace(/\s+/g, " ");                    // مسافة واحدة
 }
 
-// ترتيب المنتجات أبجدياً (يدعم العربية)
-const sortedProducts = [...products].sort((a, b) =>
-  a.name.localeCompare(b.name, "ar", { sensitivity: "base" })
-);
-
 // أكواد الخصم
 const discountCodes = {
   FISH2025: { type: "percentage", value: 10, description: "خصم 10%" },
   WELCOME:  { type: "fixed",      value: 500, description: "خصم 500 ريال" },
-  FRESH50:  { type: "percentage", value: 5,  description: "خصم 5%" },
+  FRESH50:  { type: "percentage", value: 5,  description: "خصم 5%" }
 };
 
 // تنسيق السعر
@@ -56,19 +56,15 @@ function getProductById(id) {
   return products.find(p => p.id === n);
 }
 
-// البحث عن المنتجات (يبحث حتى لو كتب المستخدم بدون "سمك" أو كتب همزات مختلفة)
+// البحث عن المنتجات
 function searchProducts(query) {
   const q = normalizeArabic(query);
   if (!q) return sortedProducts;
 
-  // لو المستخدم كتب الاسم بدون "سمك" نحاول نطابق الاثنين
   const q2 = q.replace(/^سمك\s+/g, "");
 
   return sortedProducts.filter(p => {
     const name = normalizeArabic(p.name);
-
-    // تحميل المنتجات مباشرة عند استدعاء السكربت
-const productsReady = loadProducts();
     const name2 = name.replace(/^سمك\s+/g, "");
     return name.includes(q) || name2.includes(q) || name.includes(q2) || name2.includes(q2);
   });
