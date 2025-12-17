@@ -1,7 +1,18 @@
 // الحصول على معلومات المنتج من URL
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('product');
-const product = getProductById(productId);
+let product;
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        await productsReady;
+    } catch (err) {
+        console.error('فشل تحميل قائمة المنتجات', err);
+        alert('حدث خطأ أثناء تحميل قائمة المنتجات. يرجى المحاولة لاحقاً.');
+        window.location.href = 'index.html';
+        return;
+    }
+
+    product = getProductById(productId);
 
 // عرض معلومات المنتج
 document.addEventListener('DOMContentLoaded', function() {
