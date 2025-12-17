@@ -13,10 +13,7 @@ async function loadProducts() {
 
   products = await res.json();
 
-  // ترتيب أبجدي عربي
-  sortedProducts = [...products].sort((a, b) =>
-    a.name.localeCompare(b.name, "ar", { sensitivity: "base" })
-  );
+
 
   currentDisplayedProducts = sortedProducts;
 }
@@ -69,6 +66,9 @@ function searchProducts(query) {
 
   return sortedProducts.filter(p => {
     const name = normalizeArabic(p.name);
+
+    // تحميل المنتجات مباشرة عند استدعاء السكربت
+const productsReady = loadProducts();
     const name2 = name.replace(/^سمك\s+/g, "");
     return name.includes(q) || name2.includes(q) || name.includes(q2) || name2.includes(q2);
   });
