@@ -9,7 +9,7 @@ cd fish-time-improved
 ```
 
 ### 2️⃣ تحديث رقم الواتساب
-ابحث عن `967781595851` وغيّره في:
+ابحث عن `967739768973` وغيّره في:
 - ✅ `index.html` (3 مواضع)
 - ✅ `order.html` (2 مواضع)  
 - ✅ `js/order.js` (1 موضع)
@@ -24,7 +24,7 @@ find . -type f \( -name "*.html" -o -name "*.js" \) -exec sed -i 's/967781595851
 ```powershell
 Get-ChildItem -Include *.html,*.js -Recurse | 
 ForEach-Object {
-    (Get-Content $_.FullName) -replace '967781595851', 'YOUR_NUMBER' | 
+    (Get-Content $_.FullName) -replace '967739768973', 'YOUR_NUMBER' | 
     Set-Content $_.FullName
 }
 ```
